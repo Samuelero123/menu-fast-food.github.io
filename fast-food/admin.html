@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Administración | Fast Food</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/admin.css">
+</head>
+<body class="admin-body">
+  <main class="admin-shell">
+    <section class="admin-login" id="login-panel">
+      <img src="assets/images/logo1.png" alt="Logo del restaurante" class="admin-logo">
+      <p class="eyebrow">Zona privada</p>
+      <h1>Administrar menú</h1>
+      <p class="admin-muted">Ingresa la contraseña para continuar.</p>
+      <form id="login-form">
+        <label for="admin-password">Contraseña</label>
+        <input id="admin-password" type="password" autocomplete="current-password" required>
+        <button class="admin-button" type="submit">Entrar</button>
+        <p class="form-message" id="login-message"></p>
+      </form>
+    </section>
+
+    <section class="admin-panel" id="admin-panel" hidden>
+      <header class="admin-header">
+        <div>
+          <p class="eyebrow">Panel privado</p>
+          <h1>Menú del restaurante</h1>
+        </div>
+        <div class="admin-actions">
+          <a class="secondary-button" href="index.html">Ver menú</a>
+          <button class="secondary-button" id="logout-button" type="button">Salir</button>
+        </div>
+      </header>
+
+      <form class="food-form" id="food-form">
+        <input id="editing-index" type="hidden" value="">
+        <h2 id="form-title">Agregar comida</h2>
+        <div class="form-grid">
+          <div>
+            <label for="food-name">Nombre</label>
+            <input id="food-name" type="text" required>
+          </div>
+          <div>
+            <label for="food-price">Precio</label>
+            <input id="food-price" type="text" placeholder="COP 15.000" required>
+          </div>
+          <div>
+            <label for="food-category">Categoría</label>
+            <select id="food-category" required></select>
+          </div>
+          <div>
+            <label for="food-image">Foto de la comida</label>
+            <input id="food-image" type="file" accept="image/*">
+          </div>
+        </div>
+        <label for="food-desc">Ingredientes y descripción</label>
+        <textarea id="food-desc" rows="3" required></textarea>
+        <div class="form-actions">
+          <button class="admin-button" type="submit">Guardar comida</button>
+          <button class="secondary-button" id="cancel-edit" type="button" hidden>Cancelar edición</button>
+        </div>
+        <p class="form-message" id="form-message"></p>
+      </form>
+
+      <section>
+        <div class="list-heading">
+          <h2>Comidas registradas</h2>
+          <span id="food-count"></span>
+        </div>
+        <div class="admin-list" id="admin-list"></div>
+      </section>
+    </section>
+  </main>
+  <script src="assets/js/script.js"></script>
+  <script src="assets/js/admin.js"></script>
+</body>
+</html>
